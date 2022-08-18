@@ -3,6 +3,12 @@ A project for Ubiquitous classes at the PUT.
 
 ## Table of contents
 * [General Info](#general-info)
+  * [Type username panel](#type-username-panel)
+  * [Sync panel](#sync-panel)
+  * [Main Menu panel](#main-menu-panel)
+  * [Games panel](#games-panel)
+  * [Game ranking panel](#game-ranking-panel)
+  * [Extension packs panel](#extension-packs-panel)
 * [How to Launch](#how-to-launch)
 * [Additional Info](#additional-info)
 
@@ -23,7 +29,7 @@ The panel only appears at startup and if the database is empty. Allows you to en
   <img src="https://user-images.githubusercontent.com/72743103/185386871-85b13c04-2367-4d8a-a84d-c276934b64f1.png" width="300">
 </p>
 
-This panel shows the username and last sync date. You can sync the database with the service, but if time since last sync is less than 24h the app will ask you if still want to do so. While syncing, a progress bar will appear in place of the synchornize button. After whole process you will be redirected to the Main Menu panel.
+This panel shows the username and last sync date. You can sync the database with the service, but if time since last sync is less than 24h the app will ask you if still want to do so. While syncing, a progress bar will appear in place of the synchornize button. After whole process you will be redirected to the [Main Menu panel](#main-menu-panel).
 
 ## Main Menu panel
 <p align="center">
@@ -33,7 +39,7 @@ This panel shows the username and last sync date. You can sync the database with
 The Main Menu panel appears at the start of the application when database is not empty. From this panel you can:
 - see all user games ("Games" button) [Games panel](#games-panel)
 - see all user extension packs ("Extension packs" button) [Extension packs panel](#extension-packs-panel)
-- update the database by synchronizing with the service [Sync panel](#sync-panel)
+- update the database by synchronizing with the service ("Synchornize" button) [Sync panel](#sync-panel)
 - delete all data ("Wipe out data" button, you will be asked if you are sure about this)
 
 ## Games panel
@@ -62,4 +68,9 @@ The easiest way to run this project is to download it and [Android Studio](https
 
 # Additional Info
 The app has only been tested on Android 11
+
+**If you want base your application on this project there are few things which require a little upgrade:**
+- Username input accepts newline signs, spacebars etc. but shouldn't
+- Sometimes sync isn't succesful (returns failure message, but if you are connected to the Internet next attempt will be 99% succesful). I haven't had time to figure out why this is happening and how to fix it
+- You should use some kind of adapter to display the data (currently the app just adds and removes rows, so the display process can be very slow for a large amount of games/extension packs)
 
